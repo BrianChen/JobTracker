@@ -9,26 +9,35 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
+import Applications from './app/components/applications';
+
 export default class JobTracker extends Component {
+
+  constructor(props) {
+    super(props);
+    const routes = [
+      {title: 'Applications', index: 0}
+    ]
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Navigator
+        initialRoute={{ title: 'Applications' }}
+        renderScene={(route, navigator) => {
+          return <Applications title={route.title} navigator={navigator}/>
+        }}
+      />
     );
   }
+
+  // renderScene(route, navigator) {
+  //
+  // }
 }
 
 const styles = StyleSheet.create({
