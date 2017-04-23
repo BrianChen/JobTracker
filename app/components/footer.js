@@ -16,20 +16,28 @@ export default class Footer extends React.Component {
     super(props);
 
     this.state = {
-      currentComponent: 'Application'
+      pageTitle: 'Application'
     }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(pageTitle) {
+    this.setState({
+      pageTitle
+    });
   }
 
   render() {
-    return (
+    return(
       <View style={styles.footer}>
-        <View style={styles.footerContents}>
+        <View style={styles.footerContents} onClick={this.handleClick.bind(this, 'Applications')}>
           <Text style={styles.contentText}>Applications</Text>
         </View>
-        <View style={styles.footerContents}>
+        <View style={styles.footerContents} onClick={this.handleClick.bind(this, 'Interviews')}>
           <Text style={styles.contentText}>Interviews</Text>
         </View>
-        <View style={styles.footerContents}>
+        <View style={styles.footerContents} onClick={this.handleClick.bind(this, 'About')}>
           <Text style={styles.contentText}>About</Text>
         </View>
       </View>
@@ -47,10 +55,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   footerContents: {
-    borderColor: 'red',
     flex: 3
   },
   contentText: {
     textAlign: 'center'
   }
-})
+});

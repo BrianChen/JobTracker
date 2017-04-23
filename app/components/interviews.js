@@ -10,9 +10,8 @@ import {
 } from 'react-native';
 
 import Header from './header';
-import Footer from './footer';
 
-export default class Applications extends React.Component {
+export default class Interviews extends React.Component {
 
   constructor(props) {
     super(props);
@@ -20,16 +19,9 @@ export default class Applications extends React.Component {
 
   render() {
     return(
-      <View style={styles.container}>
-        <Header title='Application' />
+      <View>
+        <Header title='Interviews'/>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-between'
-  }
-})
