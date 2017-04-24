@@ -16,7 +16,6 @@ export default class Header extends React.Component {
   }
 
   render() {
-    let str = 'string';
     return(
       <View style={styles.header}>
         <Text style={styles.title}>{this.props.title}</Text>
@@ -34,6 +33,7 @@ const styles = StyleSheet.create({
     height: 80
   },
   title: {
+    paddingTop: 10,
     fontSize: 20,
     fontFamily: 'helvetica neue',
   }
